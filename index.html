@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171816">
+  <meta name="description" content="Kilusisa Legacy Group delivers earthworks, civil construction, demolition and mining services with purpose and precision.">
+  <title>Kilusisa Legacy Group | Groundwork for a stronger future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #171816;
+      --ink-soft: #252622;
+      --gold: #d7a928;
+      --gold-light: #f0ca62;
+      --paper: #f4f2eb;
+      --white: #fffefa;
+      --muted: #a9a89f;
+      --line: rgba(23, 24, 22, .14);
+      --font-body: "DM Sans", sans-serif;
+      --font-display: "Manrope", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #80600c;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 25px; height: 2px; background: var(--gold); }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 0 22px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      transition: background .2s, color .2s, transform .2s;
+    }
+    .button:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .button .arrow { font-size: 17px; line-height: 1; }
+    .button--outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,.48); }
+    .button--outline:hover { background: var(--white); color: var(--ink); }
+
+    /* Header */
+    .site-header {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      display: grid;
+      width: 43px;
+      height: 43px;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -.08em;
+    }
+    .brand-name { display: grid; gap: 2px; }
+    .brand-name strong {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+    .brand-name span { color: var(--gold-light); font-size: 9px; font-weight: 600; letter-spacing: .27em; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a:not(.button) {
+      color: rgba(255,255,255,.8);
+      font-size: 11px;
+      font-weight: 600;
+      transition: color .2s;
+    }
+    .nav-links a:not(.button):hover { color: var(--gold-light); }
+    .nav-links .button { min-height: 43px; padding-inline: 17px; }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,.34);
+      background: transparent;
+      color: white;
+      font-size: 21px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 740px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+      background: #22231f;
+      color: var(--white);
+    }
+    .hero-video {
+      position: absolute;
+      z-index: -3;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.72) contrast(1.12);
+      animation: heroScale 14s ease-out both;
+    }
+    @keyframes heroScale {
+      from { transform: scale(1.08); }
+      to { transform: scale(1.015); }
+    }
+    .hero::before {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(17,18,16,.96) 0%, rgba(17,18,16,.82) 43%, rgba(17,18,16,.2) 100%),
+        linear-gradient(0deg, rgba(17,18,16,.56), transparent 42%);
+    }
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      right: -120px;
+      bottom: -240px;
+      width: 700px;
+      height: 700px;
+      border: 1px solid rgba(215,169,40,.22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 38px rgba(215,169,40,.035), 0 0 0 90px rgba(215,169,40,.025);
+      content: "";
+      pointer-events: none;
+    }
+    .hero-content { padding-top: 85px; padding-bottom: 72px; }
+    .hero .eyebrow { color: var(--gold-light); }
+    .hero h1 {
+      max-width: 790px;
+      margin: 28px 0 24px;
+      font-family: var(--font-display);
+      font-size: clamp(52px, 7.5vw, 96px);
+      font-weight: 700;
+      letter-spacing: -.075em;
+      line-height: .99;
+    }
+    .hero h1 span { color: var(--gold-light); }
+    .hero-copy {
+      max-width: 510px;
+      margin: 0;
+      color: rgba(255,255,255,.75);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 33px; }
+    .hero-note {
+      position: absolute;
+      right: max(32px, calc((100vw - 1200px) / 2));
+      bottom: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,.76);
+      font-size: 10px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+    .hero-note::before { width: 1px; height: 45px; background: var(--gold); content: ""; }
+    .hero-index {
+      position: absolute;
+      right: max(32px, calc((100vw - 1200px) / 2));
+      top: 48%;
+      color: rgba(255,255,255,.19);
+      font-family: var(--font-display);
+      font-size: clamp(90px, 18vw, 220px);
+      font-weight: 800;
+      letter-spacing: -.1em;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* Service ribbon */
+    .service-ribbon { background: var(--gold); }
+    .ribbon-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .ribbon-item {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px 24px;
+      border-right: 1px solid rgba(23,24,22,.2);
+    }
+    .ribbon-item:first-child { padding-left: 0; }
+    .ribbon-item:last-child { border: 0; }
+    .ribbon-number { color: rgba(23,24,22,.5); font-family: var(--font-display); font-size: 11px; font-weight: 800; }
+    .ribbon-item strong { font-family: var(--font-display); font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+
+    /* Intro */
+    .intro { padding: 120px 0 116px; }
+    .intro-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 100px; align-items: start; }
+    .section-heading {
+      margin: 22px 0 0;
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5vw, 60px);
+      font-weight: 700;
+      letter-spacing: -.065em;
+      line-height: 1.08;
+    }
+    .section-heading span { color: #a47b10; }
+    .intro-copy { padding-top: 18px; }
+    .intro-copy p { margin: 0 0 19px; color: #5f6059; font-size: 15px; line-height: 1.9; }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-top: 12px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .text-link span { color: #a47b10; font-size: 17px; }
+
+    /* Cinematic fleet showcase */
+    .fleet-showcase { background: #11120f; color: var(--white); padding: 16px 0; }
+    .fleet-stage {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 38% 62%;
+      overflow: hidden;
+    }
+    .fleet-panel {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 58px 52px 48px;
+      background: rgba(17,18,16,.94);
+      border-right: 1px solid rgba(240,202,98,.24);
+    }
+    .fleet-panel .eyebrow { color: var(--gold-light); }
+    .fleet-panel h2 {
+      max-width: 380px;
+      margin: 20px 0 22px;
+      font-family: var(--font-display);
+      font-size: clamp(42px, 5vw, 68px);
+      letter-spacing: -.07em;
+      line-height: .98;
+    }
+    .fleet-panel h2 span { color: var(--gold-light); }
+    .fleet-panel p { max-width: 330px; margin: 0; color: #aaa99f; font-size: 14px; line-height: 1.85; }
+    .fleet-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 35px; }
+    .fleet-stat { padding-top: 15px; border-top: 1px solid rgba(255,255,255,.16); }
+    .fleet-stat strong { display: block; color: var(--gold-light); font-family: var(--font-display); font-size: 25px; }
+    .fleet-stat span { color: #8e8e84; font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .fleet-film { position: relative; min-width: 0; overflow: hidden; }
+    .fleet-film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.68) contrast(1.12); }
+    .fleet-film::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,18,16,.12), transparent 45%, rgba(17,18,16,.12)); content: ""; pointer-events: none; }
+    .film-tag {
+      position: absolute;
+      z-index: 2;
+      right: 28px;
+      bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(17,18,16,.45);
+      backdrop-filter: blur(8px);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .film-tag::before { width: 7px; height: 7px; border-radius: 50%; background: var(--gold-light); box-shadow: 0 0 14px var(--gold-light); content: ""; }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.75,.25,1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* Services */
+    .services { padding: 105px 0 115px; background: var(--ink); color: var(--white); }
+    .services-head { display: flex; justify-content: space-between; align-items: end; gap: 35px; margin-bottom: 47px; }
+    .services .eyebrow { color: var(--gold-light); }
+    .services .section-heading { max-width: 580px; }
+    .services .section-heading span { color: var(--gold-light); }
+    .services-intro { max-width: 310px; margin: 0 0 8px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); }
+    .service-card { min-height: 285px; padding: 29px 25px 27px 0; border-right: 1px solid rgba(255,255,255,.18); }
+    .service-card { transition: background .35s ease, transform .35s ease; }
+    .service-card:hover { background: rgba(240,202,98,.055); transform: translateY(-8px); }
+    .service-card + .service-card { padding-left: 25px; }
+    .service-card:last-child { border-right: 0; }
+    .service-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(240,202,98,.58);
+      color: var(--gold-light);
+    }
+    .service-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .service-card h3 { margin: 34px 0 12px; font-family: var(--font-display); font-size: 18px; letter-spacing: -.03em; }
+    .service-card p { max-width: 235px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .service-card .card-index { display: block; margin-top: 25px; color: var(--gold-light); font-size: 10px; font-weight: 700; letter-spacing: .13em; }
+
+    /* Values */
+    .values { padding: 120px 0; }
+    .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+    .values-visual {
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
+      background:
+        linear-gradient(0deg, rgba(23,24,22,.85), rgba(23,24,22,.05) 65%),
+        url("https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1200&q=85") center / cover,
+        #393a32;
+    }
+    .values-visual::before {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      width: 64px;
+      height: 64px;
+      border-top: 1px solid var(--gold-light);
+      border-left: 1px solid var(--gold-light);
+      content: "";
+    }
+    .visual-caption { position: absolute; right: 28px; bottom: 26px; left: 28px; color: white; }
+    .visual-caption strong { display: block; font-family: var(--font-display); font-size: 24px; letter-spacing: -.04em; }
+    .visual-caption span { display: block; margin-top: 8px; color: var(--gold-light); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .values-content .section-heading { margin-bottom: 17px; }
+    .values-lead { max-width: 470px; margin: 0 0 31px; color: #66675f; font-size: 14px; line-height: 1.8; }
+    .value-list { border-top: 1px solid var(--line); }
+    .value-row { display: grid; grid-template-columns: 45px 1fr; gap: 14px; padding: 19px 0; border-bottom: 1px solid var(--line); }
+    .value-row b { color: #a47b10; font-family: var(--font-display); font-size: 12px; }
+    .value-row h3 { margin: 0 0 6px; font-family: var(--font-display); font-size: 14px; }
+    .value-row p { margin: 0; color: #74756d; font-size: 12px; line-height: 1.7; }
+
+    /* Partnership */
+    .partnership { position: relative; overflow: hidden; padding: 104px 0 110px; background: var(--gold); }
+    .partnership::after {
+      position: absolute;
+      top: -190px;
+      right: -150px;
+      width: 580px;
+      height: 580px;
+      border: 1px solid rgba(23,24,22,.22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 38px rgba(23,24,22,.045), 0 0 0 90px rgba(23,24,22,.04);
+      content: "";
+      pointer-events: none;
+    }
+    .partnership-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr .75fr; gap: 80px; align-items: center; }
+    .partnership .eyebrow { color: #4a3b17; }
+    .partnership .section-heading { max-width: 660px; margin-bottom: 20px; }
+    .partnership-copy { max-width: 580px; margin: 0; color: rgba(23,24,22,.76); font-size: 14px; line-height: 1.8; }
+    .partnership .button { margin-top: 28px; border-color: var(--ink); background: var(--ink); color: white; }
+    .partnership .button:hover { background: #36372f; }
+    .partner-note { padding: 25px 0 25px 26px; border-left: 1px solid rgba(23,24,22,.35); }
+    .partner-note span { color: #4a3b17; font-size: 10px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .partner-note p { max-width: 270px; margin: 13px 0 0; font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: -.04em; line-height: 1.35; }
+
+    /* Contact and footer */
+    .contact { padding: 95px 0 90px; background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; }
+    .contact .section-heading { font-size: clamp(38px, 4vw, 52px); }
+    .contact-intro { max-width: 370px; margin: 16px 0 0; color: #6a6b63; font-size: 13px; line-height: 1.8; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+    .field { display: grid; gap: 8px; }
+    .field--full { grid-column: 1 / -1; }
+    .field label { color: #55564f; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .field input, .field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d9d8d0;
+      border-radius: 0;
+      outline: none;
+      background: transparent;
+      color: var(--ink);
+      font-size: 13px;
+      transition: border-color .2s;
+    }
+    .field input:focus, .field textarea:focus { border-color: #a47b10; }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .form-bottom { grid-column: 1/-1; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .form-status { min-height: 18px; margin: 0; color: #63645d; font-size: 11px; line-height: 1.5; }
+    .site-footer { padding: 27px 0; background: var(--ink); color: rgba(255,255,255,.66); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { color: white; font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .footer-brand span { color: var(--gold-light); }
+    .footer-copy { margin: 0; font-size: 10px; }
+    .back-top { color: var(--gold-light); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+
+    @media (max-width: 900px) {
+      .wrap { width: min(100% - 48px, 720px); }
+      .nav-links { gap: 20px; }
+      .nav-links a:not(.button) { font-size: 10px; }
+      .hero { min-height: 680px; }
+      .hero-index { top: 55%; }
+      .ribbon-inner { grid-template-columns: 1fr 1fr; }
+      .ribbon-item { min-height: 76px; padding-left: 18px; border-bottom: 1px solid rgba(23,24,22,.2); }
+      .ribbon-item:first-child { padding-left: 0; }
+      .ribbon-item:nth-child(2) { border-right: 0; }
+      .ribbon-item:nth-child(3), .ribbon-item:nth-child(4) { border-bottom: 0; }
+      .intro-grid, .values-grid { gap: 48px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service-card { min-height: 250px; padding: 25px !important; border-bottom: 1px solid rgba(255,255,255,.18); }
+      .service-card:nth-child(2) { border-right: 0; }
+      .service-card:nth-child(3), .service-card:nth-child(4) { border-bottom: 0; }
+      .service-card:nth-child(3) { padding-left: 0 !important; }
+      .values-visual { min-height: 430px; }
+      .contact-grid { gap: 50px; }
+      .partnership-grid { gap: 45px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: calc(100% - 40px); }
+      .nav { min-height: 72px; }
+      .brand-mark { width: 38px; height: 38px; }
+      .brand-name strong { font-size: 10px; }
+      .brand-name span { font-size: 8px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        position: absolute;
+        top: 71px;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 20px;
+        border-bottom: 1px solid rgba(255,255,255,.16);
+        background: #171816;
+      }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a:not(.button) { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.1); font-size: 12px; }
+      .nav-links .button { align-self: flex-start; margin-top: 15px; }
+      .hero { min-height: 690px; align-items: flex-end; }
+      .hero::before {
+        background:
+          linear-gradient(0deg, rgba(17,18,16,.96) 0%, rgba(17,18,16,.72) 57%, rgba(17,18,16,.25) 100%);
+      }
+      .hero-content { padding-top: 130px; padding-bottom: 80px; }
+      .hero h1 { margin: 22px 0 18px; font-size: clamp(49px, 15vw, 74px); }
+      .hero-copy { font-size: 14px; }
+      .hero-actions { align-items: stretch; flex-direction: column; max-width: 260px; margin-top: 26px; }
+      .hero-note, .hero-index { display: none; }
+      .ribbon-item { gap: 10px; padding: 15px 10px; }
+      .ribbon-item:first-child { padding-left: 0; }
+      .ribbon-item strong { font-size: 10px; }
+      .intro, .values { padding: 78px 0; }
+      .intro-grid, .values-grid, .partnership-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .fleet-stage { grid-template-columns: 1fr; min-height: 640px; }
+      .fleet-panel { min-height: 330px; padding: 38px 28px 32px; border-right: 0; border-bottom: 1px solid rgba(240,202,98,.24); }
+      .fleet-panel h2 { font-size: 46px; }
+      .fleet-film { min-height: 310px; }
+      .film-tag { right: 18px; bottom: 18px; }
+      .intro-copy { padding-top: 0; }
+      .section-heading { font-size: 42px; }
+      .services { padding: 78px 0; }
+      .services-head { display: block; margin-bottom: 32px; }
+      .services-intro { margin-top: 18px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service-card { min-height: 246px; padding: 20px 13px !important; }
+      .service-card + .service-card { padding-left: 13px; }
+      .service-card:nth-child(3) { padding-left: 0 !important; }
+      .service-card h3 { margin-top: 25px; font-size: 15px; }
+      .service-card p { font-size: 11px; }
+      .service-card .card-index { margin-top: 18px; }
+      .values-grid { gap: 35px; }
+      .values-visual { min-height: 350px; }
+      .partnership { padding: 78px 0; }
+      .partnership-grid { gap: 35px; }
+      .partner-note { padding-left: 20px; }
+      .partner-note p { font-size: 19px; }
+      .contact { padding: 75px 0; }
+      .contact-form { grid-template-columns: 1fr; }
+      .field--full, .form-bottom { grid-column: auto; }
+      .form-bottom { align-items: flex-start; flex-direction: column; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Kilusisa Legacy Group home">
+        <span class="brand-mark" aria-hidden="true">KLG</span>
+        <span class="brand-name"><strong>KILUSISA</strong><span>LEGACY GROUP</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">Who we are</a>
+        <a href="#services">What we do</a>
+        <a href="#values">Our values</a>
+        <a href="#partnerships">Partnerships</a>
+        <a class="button" href="#contact">Start a conversation <span class="arrow">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2200&q=85">
+        <source src="https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4" type="video/mp4">
+      </video>
+      <div class="hero-content wrap">
+        <span class="eyebrow">Built on strength. Driven by purpose.</span>
+        <h1>Groundwork for<br>a <span>stronger</span> future.</h1>
+        <p class="hero-copy">From first cut to finished infrastructure, Kilusisa Legacy Group brings the people, plant and purpose to move projects forward.</p>
+        <div class="hero-actions">
+          <a class="button" href="#services">Explore our services <span class="arrow">↘</span></a>
+          <a class="button button--outline" href="#partnerships">Partner with us <span class="arrow">↗</span></a>
+        </div>
+      </div>
+      <span class="hero-index" aria-hidden="true">KLG</span>
+      <span class="hero-note">Built for the ground ahead</span>
+    </section>
+
+    <div class="service-ribbon" aria-label="Our core services">
+      <div class="ribbon-inner wrap">
+        <div class="ribbon-item"><span class="ribbon-number">01</span><strong>Earthworks</strong></div>
+        <div class="ribbon-item"><span class="ribbon-number">02</span><strong>Civil construction</strong></div>
+        <div class="ribbon-item"><span class="ribbon-number">03</span><strong>Demolition</strong></div>
+        <div class="ribbon-item"><span class="ribbon-number">04</span><strong>Mining services</strong></div>
+      </div>
+    </div>
+
+    <section class="intro" id="about">
+      <div class="intro-grid wrap">
+        <div>
+          <span class="eyebrow">Who we are</span>
+          <h2 class="section-heading">A legacy is built<br><span>one project at a time.</span></h2>
+        </div>
+        <div class="intro-copy">
+          <p>Kilusisa Legacy Group is a construction and mining services company built to take on demanding work and deliver it with care. We support projects from the ground up with practical expertise, capable equipment and a commitment to doing the job right.</p>
+          <p>Our work spans earthworks, civil construction, demolition and mining services. Across every site, we bring a hands-on mindset, clear communication and respect for the people and places connected to the project.</p>
+          <a class="text-link" href="#values">What guides our work <span>↘</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="fleet-showcase" id="fleet" aria-label="Heavy equipment showcase">
+      <div class="fleet-stage wrap reveal">
+        <div class="fleet-panel">
+          <div>
+            <span class="eyebrow">Power in motion</span>
+            <h2>Built for<br><span>the demanding.</span></h2>
+            <p>Purposeful fleet, disciplined operators and a relentless focus on safe, efficient delivery across every terrain.</p>
+          </div>
+          <div class="fleet-meta" aria-label="Kilusisa fleet highlights">
+            <div class="fleet-stat"><strong>4</strong><span>Core divisions</span></div>
+            <div class="fleet-stat"><strong>24/7</strong><span>Project mindset</span></div>
+          </div>
+        </div>
+        <div class="fleet-film">
+          <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1600&q=85">
+            <source src="https://videos.pexels.com/video-files/3129957/3129957-hd_1920_1080_25fps.mp4" type="video/mp4">
+          </video>
+          <span class="film-tag">KLG / Field operations</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="services-head">
+          <div>
+            <span class="eyebrow">What we do</span>
+            <h2 class="section-heading">Capability to move<br><span>projects forward.</span></h2>
+          </div>
+          <p class="services-intro">Reliable site services and construction capability for complex ground, tight timelines and ambitious plans.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 19h18M5 18l4-5 3 2 4-6 3 3"/><path d="M13 8h4l2 3M5 19v-3"/></svg>
+            </span>
+            <h3>Earthworks</h3>
+            <p>Site preparation, excavation and ground shaping to create a solid start for what comes next.</p>
+            <span class="card-index">01 / GROUNDWORK</span>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M8 20v-6h8v6M2 20h20M8 9h.01M12 9h.01M16 9h.01"/></svg>
+            </span>
+            <h3>Civil construction</h3>
+            <p>Practical construction capability for infrastructure that connects communities and industry.</p>
+            <span class="card-index">02 / INFRASTRUCTURE</span>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 20h16M6 17l4-5-3-3 3-4 3 4-2 3 4 5M15 8l2-3 3 3-2 3"/></svg>
+            </span>
+            <h3>Demolition</h3>
+            <p>Controlled, considered site clearance to make way for new possibilities and progress.</p>
+            <span class="card-index">03 / CLEAR THE WAY</span>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 19h18M5 19l3-7 3 4 3-9 5 12"/><path d="M12 7l2-3 2 3"/></svg>
+            </span>
+            <h3>Mining services</h3>
+            <p>Responsive operational support shaped around the requirements of mining projects.</p>
+            <span class="card-index">04 / MINING SUPPORT</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="values" id="values">
+      <div class="values-grid wrap">
+        <div class="values-visual" role="img" aria-label="Construction site and infrastructure work">
+          <div class="visual-caption">
+            <strong>Work that stands the test of time.</strong>
+            <span>Our commitment, on every site</span>
+          </div>
+        </div>
+        <div class="values-content">
+          <span class="eyebrow">What we stand for</span>
+          <h2 class="section-heading">Strong work.<br><span>Solid values.</span></h2>
+          <p class="values-lead">The way we work matters as much as what we build. These principles shape our decisions, partnerships and presence on site.</p>
+          <div class="value-list">
+            <article class="value-row">
+              <b>01</b><div><h3>Safety, always</h3><p>We put people first and work to create safer sites for everyone.</p></div>
+            </article>
+            <article class="value-row">
+              <b>02</b><div><h3>Own the outcome</h3><p>We value accountability, straight communication and work done with care.</p></div>
+            </article>
+            <article class="value-row">
+              <b>03</b><div><h3>Build together</h3><p>We believe better results come from respect, collaboration and shared ambition.</p></div>
+            </article>
+            <article class="value-row">
+              <b>04</b><div><h3>Think beyond today</h3><p>We aim to leave a positive, lasting contribution through the work we do.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partnership" id="partnerships">
+      <div class="partnership-grid wrap">
+        <div>
+          <span class="eyebrow">Partnership opportunities</span>
+          <h2 class="section-heading">Good work starts<br>with <span>good partners.</span></h2>
+          <p class="partnership-copy">We welcome conversations with clients, contractors, suppliers and communities who share our commitment to safe, capable and responsible delivery. Whether you have a project to deliver or a partnership idea to explore, let’s find common ground.</p>
+          <a class="button" href="#contact">Explore working together <span class="arrow">↗</span></a>
+        </div>
+        <div class="partner-note">
+          <span>Open to collaboration</span>
+          <p>Project delivery. Supply partnerships. Shared opportunity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-grid wrap">
+        <div>
+          <span class="eyebrow">Make a connection</span>
+          <h2 class="section-heading">Let’s talk<br><span>about the work.</span></h2>
+          <p class="contact-intro">Tell us a little about your project or partnership idea. Once your company email is added, this form will prepare an enquiry in your email app so it can be sent directly to your team.</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" autocomplete="name" required placeholder="Name">
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@company.com">
+          </div>
+          <div class="field field--full">
+            <label for="organisation">Company / organisation</label>
+            <input id="organisation" name="organisation" autocomplete="organization" placeholder="Your organisation">
+          </div>
+          <div class="field field--full">
+            <label for="message">How can we work together?</label>
+            <textarea id="message" name="message" required placeholder="Share a few details about your project or idea"></textarea>
+          </div>
+          <div class="form-bottom">
+            <button class="button" type="submit">Prepare enquiry <span class="arrow">↗</span></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite">Add your company email before launch to receive enquiries.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner wrap">
+      <a class="footer-brand" href="#top">Kilusisa <span>Legacy Group</span></a>
+      <p class="footer-copy">Earthworks · Civil construction · Demolition · Mining services</p>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+  <script>
+    const contactEmail = "Shemzyk@gmail.com";
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector("#nav-links");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+      navigation.classList.toggle("is-open", !isOpen);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        navigation.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+      }
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+    document.querySelector("#contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const subject = encodeURIComponent("Project or partnership enquiry - Kilusisa Legacy Group");
+      const body = encodeURIComponent(
+        `Name: ${form.get("name")}\nEmail: ${form.get("email")}\nOrganisation: ${form.get("organisation") || "Not provided"}\n\n${form.get("message")}`
+      );
+      const status = document.querySelector("#form-status");
+      if (!contactEmail) {
+        status.textContent = "The enquiry is ready. Add your company email to contactEmail near the bottom of index.html to enable sending.";
+        return;
+      }
+      status.textContent = "Your email app is opening with the enquiry ready to send.";
+      window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
